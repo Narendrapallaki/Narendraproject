@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><body><h1>Hii #$toName$#,</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.ibus natus vel deleniti?</p><p>Thanks& regards<br>[#$fromName$#]</p></body></html>
