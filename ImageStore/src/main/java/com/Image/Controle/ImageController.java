@@ -30,7 +30,7 @@ import com.Image.serinter.SerInter;
 import com.Image.serinter.SerInterfaceMethod;
 
 
-@RestController
+@Controller
 public class ImageController {
 	
 	
@@ -83,9 +83,20 @@ public class ImageController {
 	
 	
 	@PostMapping("/saveImage")
-	public ResponseEntity<String>imageUploding(@RequestParam("file") MultipartFile[] file ) throws SerialException, SQLException, IOException, Unsupportedfileformat  
+	public ResponseEntity<String> imageUploding(@RequestParam("file") MultipartFile[] file ) throws SerialException, SQLException, IOException, Unsupportedfileformat  
 	{
 		return new ResponseEntity<String>(serInter.uploadImages(file), HttpStatus.OK);
 
 	}
+	@GetMapping("/done")
+	public String done()
+	{
+		return "success";
+	}
+/*	@GetMapping("/image")
+	public String imagesave(@PathVariable("file") MultipartFile[] file) throws SerialException, IOException, SQLException, Unsupportedfileformat
+	{
+		serInter.uploadImages(file);
+		return "image";
+	}*/
 }

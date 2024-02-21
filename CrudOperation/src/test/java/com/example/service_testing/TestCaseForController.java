@@ -36,18 +36,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import net.minidev.json.JSONUtil;
 @WebMvcTest(Contro.class)
 @AutoConfigureMockMvc
-public class TestCaseForController
-{ 
-	
-	   @Mock
-	   private ServiceInterface serInter;
-	   
-	   @InjectMocks
-	   private Contro contro;
-	   
-	   @Autowired
-	   private MockMvc mockMvc;
-	
+public class TestCaseForController {
+
+   @MockBean
+   private ServiceInterface serInter;
+
+   @Autowired
+   private MockMvc mockMvc;
+
+   @Autowired
+   private Contro contro;
 	
 	   @Test
 	   public void getAllTest()
@@ -116,7 +114,7 @@ public class TestCaseForController
 	        mockMvc.perform(MockMvcRequestBuilders.post("/postData")
 	                .contentType(MediaType.APPLICATION_JSON)
 	                .content(asJsonString(stu)))
-	                .andExpect(MockMvcResultMatchers.status().isOk())
+	                .andExpect(MockMvcResultMatchers.status().isCreated())
 	                .andExpect(MockMvcResultMatchers.content().json(asJsonString(s1)));
 
 	     

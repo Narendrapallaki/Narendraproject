@@ -37,8 +37,8 @@ public class EkartController {
 	private static final String ekart_Service="ekartService";
 	private static final String url="http://localhost:2020/flipKard";
 	@GetMapping("/deliviry")
-	//@CircuitBreaker(name=ekart_Service,fallbackMethod = "getFallBackMethod")
-	@Retry(name=ekart_Service,fallbackMethod = "getFallBackMethod")
+	@CircuitBreaker(name=ekart_Service,fallbackMethod = "getFallBackMethod")
+	//@Retry(name=ekart_Service,fallbackMethod = "getFallBackMethod")
 	public List<EkartOrder> get(@RequestParam("name") String productName)
 	{
 		 // String endPoint=productName==null?url+"/getAll":url+"/get/"+productName;

@@ -35,9 +35,10 @@ public class MailService {
 		try {
 			MimeMessage mimeMessage = javaMailSender.createMimeMessage();
 			MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
-
+             
+		//	mimeMessageHelper.setFrom("narendrapallaki@gmail.com");
 			mimeMessageHelper.setTo("narendrapallaki2018@gmail.com");
-			mimeMessageHelper.setSubject("Approve m leave");
+			mimeMessageHelper.setSubject("Approve my leave");
 
 			Context context = new Context();
 
